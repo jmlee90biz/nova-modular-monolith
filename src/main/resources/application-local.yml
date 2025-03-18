@@ -1,0 +1,45 @@
+spring:
+  docker:
+    compose:
+      skip:
+        in-tests: false
+
+  datasource:
+    username: nova_modular_monolith
+    password: nova_modular_monolith
+    url: jdbc:postgresql://localhost:5432/nova_modular_monolith
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  sql:
+    init:
+      mode: never
+
+  modulith:
+    detection-strategy: explicitly-annotated
+
+#    events:
+#      republish-outstanding-events-on-restart: false
+
+
+#
+#logging:
+#  level:
+#    org.springframework.modulith: DEBUG
+#    org.springframework.web: DEBUG
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#server:
+#  port: 8088
+
+springdoc:
+  api-docs:
+    groups:
+      enabled: true
