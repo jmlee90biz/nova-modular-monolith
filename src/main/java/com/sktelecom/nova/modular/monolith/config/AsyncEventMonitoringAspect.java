@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.time.Instant;
 
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class AsyncEventMonitoringAspect {
 
     private final MeterRegistry meterRegistry;

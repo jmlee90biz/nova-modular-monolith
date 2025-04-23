@@ -1,11 +1,13 @@
 package com.sktelecom.nova.modular.monolith.customer.profile.internal;
 
+import com.sktelecom.nova.modular.monolith.billing.invoice.api.InvoiceService;
 import com.sktelecom.nova.modular.monolith.customer.profile.api.CustomerRegistrationRequest;
 import com.sktelecom.nova.modular.monolith.customer.profile.api.CustomerDto;
 import com.sktelecom.nova.modular.monolith.customer.profile.api.CustomerProfileService;
 
 import com.sktelecom.nova.modular.monolith.shared.kernel.EventPublisher;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +18,9 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class CustomerProfileServiceImpl implements CustomerProfileService {
     private final CustomerRepository customerRepository;
-    private final EventPublisher eventPublisher;
+    //private final EventPublisher eventPublisher;
+    private final ApplicationEventPublisher eventPublisher;
+
 
     @Override
     @Transactional
@@ -25,7 +29,8 @@ class CustomerProfileServiceImpl implements CustomerProfileService {
                 Customer.createCustomer(customerRegistrationRequest.name(), customerRegistrationRequest.email())
         );
 
-        eventPublisher.publish(registeredCustomer.createCustomerRegisteredEvent());
+        eventPublisher.publishEvent(registeredCustomer.createCustomerRegisteredEvent());
+    //    eventPublisher.publish(registeredCustomer.createCustomerRegisteredEvent());
 
 //        if(true) {
 //            throw new RuntimeException("TRANSACTION TEST");

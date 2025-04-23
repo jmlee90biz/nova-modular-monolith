@@ -1,8 +1,6 @@
 package com.sktelecom.nova.modular.monolith.product.pricing.api;
 
 
-import com.sktelecom.nova.modular.monolith.product.pricing.event.PricingPlanRegistrationRequest;
-
 import java.util.List;
 import java.util.UUID;
 

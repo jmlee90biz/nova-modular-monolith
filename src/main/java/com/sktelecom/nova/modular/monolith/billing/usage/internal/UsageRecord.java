@@ -1,5 +1,6 @@
 package com.sktelecom.nova.modular.monolith.billing.usage.internal;
 
+import com.sktelecom.nova.modular.monolith.billing.usage.event.UsageRecordCreatedEvent;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;

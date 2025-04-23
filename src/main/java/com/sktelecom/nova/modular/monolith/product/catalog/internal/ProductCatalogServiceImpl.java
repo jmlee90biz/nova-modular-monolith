@@ -31,11 +31,18 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
         return ProductMapper.toProductDto(registeredProduct);
     }
 
+
+
+
     @Override
     public ProductDto getProductById(UUID productId) {
         return productRepository.findById(productId).map(ProductMapper::toProductDto)
                 .orElseThrow(()->new RuntimeException("Product not found"));
     }
+
+
+
+
 
     @Override
     public List<ProductDto> findAllProducts() {

@@ -1,6 +1,6 @@
 package com.sktelecom.nova.modular.monolith.product.pricing.internal;
 
-import com.sktelecom.nova.modular.monolith.product.pricing.event.PricingPlanRegistrationRequest;
+import com.sktelecom.nova.modular.monolith.product.pricing.api.PricingPlanRegistrationRequest;
 import com.sktelecom.nova.modular.monolith.product.pricing.api.PricingPlanDto;
 import com.sktelecom.nova.modular.monolith.product.pricing.api.ProductPricingPlanDto;
 import com.sktelecom.nova.modular.monolith.product.pricing.api.ProductPricingService;

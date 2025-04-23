@@ -1,8 +1,8 @@
-package com.sktelecom.nova.modular.monolith.partner.management.internal;
+package com.sktelecom.nova.modular.monolith.partner.settlement.internal;
 
+import com.sktelecom.nova.modular.monolith.partner.management.api.PartnerDto;
 import com.sktelecom.nova.modular.monolith.partner.management.api.PartnerManagementService;
 import com.sktelecom.nova.modular.monolith.partner.management.api.PartnerRegistrationRequest;
-import com.sktelecom.nova.modular.monolith.partner.management.api.PartnerDto;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +12,9 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/partner/management/partners")
-@Tag(name="partner-management")
-class PartnerController {
-
+@RequestMapping("/partner/settlement/partners")
+@Tag(name="partner-settlement")
+class PartnerSettlementController {
     private final PartnerManagementService partnerManagementService;
 
     @GetMapping("/{id}")

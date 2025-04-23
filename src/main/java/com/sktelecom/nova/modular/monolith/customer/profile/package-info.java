@@ -1,7 +1,7 @@
 @ApplicationModule(
         displayName = "customer-profile",
         allowedDependencies = {
-                "common.notification::event"
+                //"common.notification::event"
         }
 )
 package com.sktelecom.nova.modular.monolith.customer.profile;

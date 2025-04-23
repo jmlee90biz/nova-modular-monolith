@@ -32,7 +32,7 @@ class NotificationServiceImpl implements NotificationService {
 
         System.out.println("Notification Send: " + createdNotification);
         try {
-            Thread.sleep(500);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

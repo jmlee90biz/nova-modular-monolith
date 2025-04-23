@@ -12,6 +12,7 @@ services:
       - '5432:5432'
     volumes:
       - /d/postgres/nova-modular-monolith:/var/lib/postgresql/data
+      - ./postgresql.conf:/var/lib/postgresql/data/postgresql.conf
 
   prometheus:
     image: 'prom/prometheus:latest'

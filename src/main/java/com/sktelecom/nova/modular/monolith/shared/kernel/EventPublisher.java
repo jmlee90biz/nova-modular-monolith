@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class EventPublisher {
     private final ApplicationEventPublisher eventPublisher;
 
-    @Transactional
+    //@Transactional
     public void publish(Object object) {
         eventPublisher.publishEvent(object);
     }

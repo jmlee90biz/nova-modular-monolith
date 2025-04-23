@@ -1,6 +1,7 @@
 @ApplicationModule(
         displayName = "partner-management",
-        allowedDependencies = {}
+        allowedDependencies = {
+        }
 )
 package com.sktelecom.nova.modular.monolith.partner.management;
 

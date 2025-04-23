@@ -1,6 +1,9 @@
 @ApplicationModule(
         displayName = "billing-payment",
-        allowedDependencies = {}
+        allowedDependencies = {
+            "billing.invoice::event",
+        "common.notification::event"
+        }
 )
 package com.sktelecom.nova.modular.monolith.billing.payment;
 

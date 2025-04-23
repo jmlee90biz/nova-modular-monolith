@@ -16,10 +16,25 @@ public class EventExecutorMetricsConfig {
     @Bean(name = "taskExecutor")
     public Executor eventTaskExecutor(MeterRegistry registry) {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(5);
-        executor.setMaxPoolSize(10);
-        executor.setQueueCapacity(50);
+        executor.setCorePoolSize(12);
+        executor.setMaxPoolSize(48);
+        executor.setQueueCapacity(200);
         executor.setThreadNamePrefix("EventExecutor-");
+//        executor.setCorePoolSize(12);
+//        executor.setMaxPoolSize(64);
+//        executor.setQueueCapacity(200);
+//        executor.setThreadNamePrefix("EventExecutor-");
+
+//        executor.setCorePoolSize(50);
+//        executor.setMaxPoolSize(100);
+//        executor.setQueueCapacity(100);
+//        executor.setThreadNamePrefix("EventExecutor-");
+
+//        executor.setCorePoolSize(200);
+//        executor.setMaxPoolSize(400);
+//        executor.setQueueCapacity(2000);
+//        executor.setThreadNamePrefix("EventExecutor-");
+
         executor.initialize();
 
         // Micrometer Executor Metrics 등록

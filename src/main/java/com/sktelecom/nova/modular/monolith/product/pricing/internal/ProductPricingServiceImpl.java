@@ -2,7 +2,7 @@ package com.sktelecom.nova.modular.monolith.product.pricing.internal;
 
 import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductCatalogService;
 import com.sktelecom.nova.modular.monolith.product.catalog.api.ProductDto;
-import com.sktelecom.nova.modular.monolith.product.pricing.event.PricingPlanRegistrationRequest;
+import com.sktelecom.nova.modular.monolith.product.pricing.api.PricingPlanRegistrationRequest;
 import com.sktelecom.nova.modular.monolith.product.pricing.api.PricingPlanDto;
 import com.sktelecom.nova.modular.monolith.product.pricing.api.ProductPricingPlanDto;
 import com.sktelecom.nova.modular.monolith.product.pricing.api.ProductPricingService;
@@ -19,9 +19,17 @@ import java.util.UUID;
 @RequiredArgsConstructor
 class ProductPricingServiceImpl implements ProductPricingService {
     private final PricingPlanRepository pricingPlanRepository;
-    private final EventPublisher eventPublisher;
 
     private final ProductCatalogService productCatalogService;
+
+    private final EventPublisher eventPublisher;
+
+    public ProductPricingPlanDto findProductPricingPlanById(UUID pricingPlanId) {
+        PricingPlanDto pricingPlanDto = getPricingPlanById(pricingPlanId);
+        ProductDto productDto = productCatalogService.getProductById(pricingPlanDto.productId());
+        return ProductPricingPlanDto.join(productDto, pricingPlanDto);
+    }
+
 
     @Override
     @Transactional
@@ -58,9 +66,5 @@ class ProductPricingServiceImpl implements ProductPricingService {
         );
     }
 
-    public ProductPricingPlanDto findProductPricingPlanById(UUID pricingPlanId) {
-        PricingPlanDto pricingPlanDto = getPricingPlanById(pricingPlanId);
-        ProductDto productDto = productCatalogService.getProductById(pricingPlanDto.productId());
-        return ProductPricingPlanDto.join(productDto, pricingPlanDto);
-    }
+
 }

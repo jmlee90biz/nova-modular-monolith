@@ -4,7 +4,7 @@ import com.sktelecom.nova.modular.monolith.billing.invoice.api.InvoiceCreationRe
 import com.sktelecom.nova.modular.monolith.billing.invoice.api.InvoiceDto;
 import com.sktelecom.nova.modular.monolith.billing.invoice.api.InvoiceService;
 
-import com.sktelecom.nova.modular.monolith.customer.subscription.api.SubscriptionStatus;
+
 import com.sktelecom.nova.modular.monolith.shared.kernel.EventPublisher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-class InvoiceServiceImpl implements InvoiceService {
+public class InvoiceServiceImpl implements InvoiceService {
     private final InvoiceRepository invoiceRepository;
     private final EventPublisher eventPublisher;
 

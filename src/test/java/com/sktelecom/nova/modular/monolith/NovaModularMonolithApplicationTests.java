@@ -10,6 +10,24 @@ import org.springframework.modulith.docs.Documenter;
 import org.springframework.modulith.test.ApplicationModuleTest;
 import org.springframework.test.context.ContextConfiguration;
 
+
+@ApplicationModuleTest
+class ModularArchitectureTest {
+
+    @Test
+    void verifyModularStructure() {
+        ApplicationModules.of(NovaModularMonolithApplication.class).verify();
+    }
+}
+
+
+
+
+
+
+
+
+
 //@SpringBootTest
 @ApplicationModuleTest
 class NovaModularMonolithApplicationTests {

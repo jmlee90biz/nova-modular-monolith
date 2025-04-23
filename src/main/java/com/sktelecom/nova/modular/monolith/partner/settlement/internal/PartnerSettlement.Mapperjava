@@ -1,0 +1,9 @@
+package com.sktelecom.nova.modular.monolith.partner.settlement.internal;
+
+import com.sktelecom.nova.modular.monolith.partner.settlement.api.PartnerSettlementDto;
+
+class PartnerSettlementMapper {
+    static PartnerSettlementDto toPartnerSettlementDto(PartnerSettlement partnerSettlement) {
+        return new PartnerSettlementDto(partnerSettlement.getId(), partnerSettlement.getPartnerId(), partnerSettlement.getRevenue());
+    }
+}
